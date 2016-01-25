@@ -1,4 +1,4 @@
-    angular.module('tchme').controller('mainController', function($scope) {
-        $scope.message = 'Everyone come and see how good I look!';
-    });
+angular.module('tchme').controller('mainController', function($scope) {
+    $scope.message = 'Everyone come and see how good I look!';
+});
 
