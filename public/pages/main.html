@@ -1,8 +1,20 @@
 
-    <div class="jumbotron text-center">
-        <h1>Main</h1>
-        <p>{{ message }}</p>
-        <input type="file" name="fileToUpload" id="fileToUpload"/>
-        <input type="button" ng-click="uploadFile()" value="Upload" />
-    </div>
-	
+<div class="jumbotron text-center">
+
+	<div class="container">
+
+
+		<h1 ng-click="loginTest()">Welcome</h1>
+		<p>to the.... of education</p>
+
+	</div>
+
+
+</div>
+
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+	<a href="#list" type="button" class="btn btn-success  btn-lg btn-block no-round" ng-click="userType(1);" > Student</a> 
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+	<a href="#list" type="button" class="btn btn-success  btn-lg btn-block no-round" ng-click="userType(2);" > Teacher</a> 
+</div>

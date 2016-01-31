@@ -1,6 +1,21 @@
-angular.module('tchme').controller('mainController', function($scope) {
-    $scope.message = 'Everyone come and see how good I look!';
+angular.module('tchme').service('Data', function () {
+     var data = {
+        userType: 1,
+        user : null
+    };
+    return data;
+}).controller('mainController', function($scope, Data) {
 
+
+	$scope.data = Data;
+    
+        // <input type="file" name="fileToUpload" id="fileToUpload"/>
+        // <input type="button" ng-click="uploadFile()" value="Upload" />
+
+    $scope.userType = function(ut){
+    	console.log("set user type :" + ut);
+    	$scope.data.userType = ut;
+    }
 
     $scope.uploadFile = function(){
     	console.log(document.getElementById('fileToUpload').files);
