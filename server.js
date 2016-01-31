@@ -18,17 +18,17 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.post('/msg/:param1', function(req, res) {
-	console.log("serve..."); 
-    var params = req.params;
-    var param1 = params.param1;
+// app.post('/msg/:param1', function(req, res) {
+// 	console.log("serve..."); 
+//     var params = req.params;
+//     var param1 = params.param1;
 
-    console.log("param1: " + param1);
-    console.log("body");
-    console.log(req.body);
-    req.body.param1 = param1;
-	res.json(req.body);
-});
+//     console.log("param1: " + param1);
+//     console.log("body");
+//     console.log(req.body);
+//     req.body.param1 = param1;
+// 	res.json(req.body);
+// });
 
 app.use(express.static('public'));
 

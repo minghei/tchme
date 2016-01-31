@@ -6,11 +6,7 @@ angular.module('tchme').service('Data', function () {
     return data;
 }).controller('mainController', function($scope, Data) {
 
-
 	$scope.data = Data;
-    
-        // <input type="file" name="fileToUpload" id="fileToUpload"/>
-        // <input type="button" ng-click="uploadFile()" value="Upload" />
 
     $scope.userType = function(ut){
     	console.log("set user type :" + ut);
