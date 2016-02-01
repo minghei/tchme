@@ -21,6 +21,27 @@ angular.module('categoryService', ['azure-mobile-service.module']).factory('Cate
 		return deferred.promise;
 	}
 
+	factory.getAllSubCategory = function(){
+		var deferred = $q.defer(); 
+		Azureservice.invokeApi("getallsubcategory", {
+		    body: {
+		    	data :{
+			    }
+		    },
+		    headers : {
+		             'Content-Type' : 'application/json'
+		    },
+		    method: "post"
+		}).then(
+			function (results){
+			 	deferred.resolve({result:true , detail:results});
+			}, function(err) {
+			  deferred.resolve({result:false});
+			}
+		);
+		return deferred.promise;
+	}
+
 	factory.getSubCategory = function(categoryId){
 		var deferred = $q.defer(); 
 		Azureservice.invokeApi("getsubcategory", {

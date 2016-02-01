@@ -17,13 +17,19 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
 
 
     $scope.init = function(){
-        console.log("init");
 
         $("#sdropdownGender").kendoDropDownList({
           dataTextField: "name",
           dataValueField: "id",
           dataSource: [{id:1 ,name:'Male'},{ id:0, name: 'Female'}]
         });
+
+        $("#tdropdownGender").kendoDropDownList({
+          dataTextField: "name",
+          dataValueField: "id",
+          dataSource: [{id:1 ,name:'Male'},{ id:0, name: 'Female'}]
+        });
+
 
         $("#sdropdownWorst").kendoDropDownList({
           dataTextField: "subCategory",
@@ -48,10 +54,40 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
           }
         });
 
+        $("#tdropdownHighest").kendoDropDownList({
+          dataTextField: "name",
+          dataValueField: "id",
+          dataSource: [{id:5 ,name:'Undergraduate'},{id:1 ,name:'Bachelor'},{ id:2, name: 'Master'}, {id:3 ,name:'PhD'},{ id:4, name: 'Others'}] 
+        });
+
+        $("#tdropdownArea").kendoDropDownList({
+          dataTextField: "name",
+          dataValueField: "id",
+          dataSource: [{id:5 ,name:'All'},{id:1 ,name:'East'},{ id:2, name: 'South'}, {id:3 ,name:'West'},{ id:4, name: 'North'}] 
+        });
+
+        $("#tdropdownFavourite1").kendoDropDownList({
+          dataTextField: "subCategory",
+          dataValueField: "id",
+          dataSource: []
+        });
+
+        $("#tdropdownFavourite2").kendoDropDownList({
+          dataTextField: "subCategory",
+          dataValueField: "id",
+          dataSource: []
+        });
+
         Category.getCategory().then(function(results){
           $("#sdropdownLevel").data("kendoDropDownList").dataSource.data(results.detail.detail);
           $scope.srefresh();
         });
+
+        Category.getAllSubCategory().then(function(results){
+          $("#tdropdownFavourite1").data("kendoDropDownList").dataSource.data(results.detail.detail);
+          $("#tdropdownFavourite2").data("kendoDropDownList").dataSource.data(results.detail.detail);
+        });
+        
     }
 
     $scope.srefresh = function(){
@@ -63,6 +99,7 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
             
           });
     }
+
 
     $scope.init();
 });
