@@ -1,0 +1,215 @@
+
+<div class="jumbotron text-center">
+	
+
+	<div class="container" ng-show="data.userType==1">
+
+
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				Name
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				<input id="sname" class="form-control" type="text" placeholder="" required="required">
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				Sex
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				<input id="sdropdownGender"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				Level
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				<input id="sdropdownLevel"/>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+				<input id="sschool" class="form-control" type="text" placeholder="Current School" required="required">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				Email
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="semail" class="form-control" type="text" placeholder="" required="required">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				Worst Subject
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="sdropdownWorst"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				Best Subject
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="sdropdownBest"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ">
+				Do you want to be a tutor too?
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+				<input type="checkbox" id="stutor" value="YES"> 
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ">
+				Let tutors contact me
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+				<input type="checkbox" id="scontact" value="YES"> 
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ">
+				Open to group tuition
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+				<input type="checkbox" id="sgroup" value="YES"> 
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ">
+				Latest subject result:
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+				<a type="button" class="btn btn-success  btn-lg btn-block no-round" ng-click="" > Add</a> 
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+				<a type="button" class="btn btn-success  btn-lg btn-block no-round" ng-click="" > Send</a> 
+			</div>
+		</div>
+
+	</div>    
+
+	<div class="container" ng-show="data.userType==2">
+
+
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				Name
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				<input id="tname" class="form-control" type="text" placeholder="" required="required">
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				Sex
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+				<input id="tdropdownGender"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+				Highest Qualification
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+				<input id="tdropdownHighest"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				Tutoring Experience
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="texp" class="form-control" type="text" placeholder="" required="required">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				Area Preference
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="tdropdownArea"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				1st Favourite Subject
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="tdropdownFavourite1"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				2nd Favourite Subject
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="tdropdownFavourite2"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				Minimum Fee
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="tfee" class="form-control" type="text" placeholder="" required="required">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				Address
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="taddress" class="form-control" type="text" placeholder="" required="required">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+				Current Job Status
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+				<input id="tjob" class="form-control" type="text" placeholder="" required="required">
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+				<textarea id="tabout" rows="4" placeholder="About yourself" class="form-control">
+
+				</textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+				<a type="button" class="btn btn-success  btn-lg btn-block no-round" ng-click="" > Send</a> 
+			</div>
+		</div>
+
+	</div>    
+
+</div>
+

@@ -14,6 +14,9 @@ angular.module('tchme', ['ngRoute', 'userService', 'adminService', 'categoryServ
         }).when('/adminlist', {
             templateUrl : 'pages/adminlist.html',
             controller  : 'adminlistController'
+        }).when('/register', {
+            templateUrl : 'pages/registration.html',
+            controller  : 'registerController'
         });
 }).constant('AzureMobileServiceClient', {
   API_URL: "https://tchmem.azure-mobile.net/",

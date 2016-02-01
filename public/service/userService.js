@@ -2,15 +2,9 @@ angular.module('userService', ['azure-mobile-service.module']).factory('User' , 
 
 	 var factory = {};
 
-	 // userFactory.reply = function(){
-	 // 	console.log("reply...");
-	 // }
 
-	factory.reply = function(){
-		var username = "kk";
-		var password = "kk";
+	factory.login = function(username, password){
 		var deferred = $q.defer(); 
-		console.log("login1");
 		Azureservice.invokeApi("login", {
 		    body: {
 		    	data :{
@@ -24,10 +18,8 @@ angular.module('userService', ['azure-mobile-service.module']).factory('User' , 
 		    method: "post"
 		}).then(
 			function (results){
-				console.log("login2");
-				console.log(results);
 			 	if(results.error==0){
-			 		deferred.resolve({result:true , user: results.user});
+			 		deferred.resolve({result:true , detail:results});
 			 	}else{
 			  		deferred.resolve({result:false});
 			 	}
@@ -37,16 +29,39 @@ angular.module('userService', ['azure-mobile-service.module']).factory('User' , 
 		);
 		return deferred.promise;
 	}
-
-
-	factory.login = function(username, password){
+	
+	factory.registerStudent = function(data){
 		var deferred = $q.defer(); 
-		Azureservice.invokeApi("login", {
+		Azureservice.invokeApi("registerstudent", {
 		    body: {
 		    	data :{
-			        username: username,
-			        password: password
+			        data : data
 			    }
+		    },
+		    headers : {
+		             'Content-Type' : 'application/json'
+		    },
+		    method: "post"
+		}).then(
+			function (results){
+			 	if(results.error==0){
+			 		deferred.resolve({result:true , detail:results});
+			 	}else{
+			  		deferred.resolve({result:false});
+			 	}
+			}, function(err) {
+			  deferred.resolve({result:false});
+			}
+		);
+		return deferred.promise;
+	}
+	
+
+	factory.registerTutor = function(data){
+		var deferred = $q.defer(); 
+		Azureservice.invokeApi("registertutor", {
+		    body: {
+		    	data : data
 		    },
 		    headers : {
 		             'Content-Type' : 'application/json'
