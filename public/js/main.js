@@ -1,6 +1,6 @@
 angular.module('tchme').service('Data', function () {
      var data = {
-        userType: 2,
+        userType: 1,
         user : null
     };
     return data;

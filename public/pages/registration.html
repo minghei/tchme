@@ -14,7 +14,7 @@
 				Sex
 			</div>
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-				<input id="sdropdownGender"/>
+				<input id="sdropdownGender" class="full-width"/>
 			</div>
 		</div>
 
@@ -38,7 +38,7 @@
 				Level
 			</div>
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-				<input id="sdropdownLevel"/>
+				<input id="sdropdownLevel" class="full-width"/>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
 				<input id="sschool" class="form-control" type="text" placeholder="Current School" required="required">
@@ -59,7 +59,7 @@
 				Worst Subject
 			</div>
 			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 ">
-				<input id="sdropdownWorst"/>
+				<input id="sdropdownWorst" class="full-width"/>
 			</div>
 		</div>
 
@@ -68,7 +68,7 @@
 				Best Subject
 			</div>
 			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 ">
-				<input id="sdropdownBest"/>
+				<input id="sdropdownBest" class="full-width"/>
 			</div>
 		</div>
 
@@ -106,10 +106,21 @@
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-left">
 			</div>
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-left">
-				<a type="button" class="btn btn-success  btn-lg btn-block no-round" ng-click="" > Add</a> 
+				<a type="button" class="btn btn-success  btn-lg btn-block no-round" ng-click="addSubject()" > Add</a> 
 			</div>
 		</div>
 
+		 <div ng-repeat="s in subjects">
+		 	<div class="row">
+		 	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		 	<input id="sdropdownSubject{{ s.index }}" ng-model="s.subject"  class="full-width"/>   
+		 	</div>
+
+		 	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		 	<input id="sSubject{{ s.index }}" class="form-control" type="text" placeholder="Grade" ng-model="s.grade" required="required">
+		 	</div>
+		 	</div>
+		 </div>
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
@@ -133,7 +144,7 @@
 				Sex
 			</div>
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-				<input id="tdropdownGender"/>
+				<input id="tdropdownGender" class="full-width"/>
 			</div>
 		</div>
 
@@ -157,7 +168,7 @@
 				Highest Qualification
 			</div>
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-				<input id="tdropdownHighest"/>
+				<input id="tdropdownHighest"  class="full-width"/>
 			</div>
 		</div>
 
@@ -175,7 +186,7 @@
 				Area Preference
 			</div>
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-				<input id="tdropdownArea"/>
+				<input id="tdropdownArea"  class="full-width"/>
 			</div>
 		</div>
 
@@ -184,7 +195,7 @@
 				1st Favourite Subject
 			</div>
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-				<input id="tdropdownFavourite1"/>
+				<input id="tdropdownFavourite1"  class="full-width"/>
 			</div>
 		</div>
 
@@ -193,7 +204,7 @@
 				2nd Favourite Subject
 			</div>
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-				<input id="tdropdownFavourite2"/>
+				<input id="tdropdownFavourite2"  class="full-width"/>
 			</div>
 		</div>
 

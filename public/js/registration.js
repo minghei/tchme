@@ -1,12 +1,15 @@
 angular.module('tchme').controller('registerController', function($scope, Data, Admin, User, Category, $window) {
 
     $scope.data = Data;
+    $scope.subjects = [];
+    $scope.subCategory = [];
 
     $scope.registerStudent = function(){
     	var data ={
 
     	};
-    	User.registerStudent(data);
+      console.log($scope.subjects);
+    	//User.registerStudent(data);
     }
     $scope.registerTutor = function(){
     	var data ={
@@ -14,6 +17,29 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
     	};
     	User.registerTutor(data); 	
     }
+
+    $scope.addSubject = function(){
+
+      var sub = {
+        index : $scope.subjects.length,
+        subject : 0,
+        grade : ''
+      }
+      $scope.subjects.push(sub);
+
+      setTimeout(function(){
+        $("#sdropdownSubject"+sub.index).kendoDropDownList({
+          dataTextField: "subCategory",
+          dataValueField: "id",
+          dataSource: $scope.subCategory
+        });
+        $("#sdropdownSubject"+sub.index).data("kendoDropDownList").select(-1);
+      },10);
+
+     // $("#tdropdownSubject"+sub.index).data("kendoDropDownList").dataSource.data($scope.subCategory);
+    }
+
+
 
 
     $scope.init = function(){
@@ -84,14 +110,16 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
         });
 
         Category.getAllSubCategory().then(function(results){
-          $("#tdropdownFavourite1").data("kendoDropDownList").dataSource.data(results.detail.detail);
-          $("#tdropdownFavourite2").data("kendoDropDownList").dataSource.data(results.detail.detail);
+          
+          $("#tdropdownFavourite1").data("kendoDropDownList").dataSource.data($scope.subCategory);
+          $("#tdropdownFavourite2").data("kendoDropDownList").dataSource.data($scope.subCategory);
         });
         
     }
 
     $scope.srefresh = function(){
           Category.getSubCategory($("#sdropdownLevel").data("kendoDropDownList").value()).then(function(results){
+            $scope.subCategory  = results.detail.detail;
             $("#sdropdownWorst").data("kendoDropDownList").dataSource.data(results.detail.detail);
             $("#sdropdownBest").data("kendoDropDownList").dataSource.data(results.detail.detail);
             $("#sdropdownBest").data("kendoDropDownList").select(0);
