@@ -28,7 +28,25 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
 
       console.log(data);
     	User.registerStudent(data).then(function(results){
-          console.log(results);
+           console.log(results);
+            if(results.result){
+                $scope.subjects = [];
+               $("#sname").val("");
+               $("#spass").val("");
+               $("#sdropdownGender").data("kendoDropDownList").select(0);
+               $("#sdropdownLevel").data("kendoDropDownList").select(0);
+               $("#sschool").val("");
+               $("#sdropdownWorst").data("kendoDropDownList").select(0);
+               $("#sdropdownBest").data("kendoDropDownList").select(0);
+               $("#stutor").attr('checked', false);
+               $("#scontact").attr('checked', false);
+               $("#sgroup").attr('checked', false);
+               $("#semail").val("");
+
+               $window.location.href= "#list";
+             }else{
+                alert(results.detail.message);
+             }
         }); 
     }
     $scope.registerTutor = function(){
@@ -50,7 +68,25 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
 
       console.log(data);
     	User.registerTutor(data).then(function(results){
-          console.log(results);
+           console.log(results);
+           if(results.result){
+             $("#tname").val("");
+             $("#tpass").val("");
+             $("#tdropdownGender").data("kendoDropDownList").select(0);
+             $("#tdropdownHighest").data("kendoDropDownList").select(0);
+             $("#texp").val("");
+             $("#tdropdownArea").data("kendoDropDownList").select(0);
+             $("#tdropdownFavourite1").data("kendoDropDownList").select(0);
+             $("#tdropdownFavourite2").data("kendoDropDownList").select(0);
+             $("#tfee").val("");
+             $("#taddress").val("");
+             $("#tjob").val("");
+             $("#tabout").val("");
+
+             $window.location.href= "#list";
+            }else{
+              alert(results.detail.message);
+            }
         });	
     }
 

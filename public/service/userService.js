@@ -45,7 +45,7 @@ angular.module('userService', ['azure-mobile-service.module']).factory('User' , 
 			 	if(results.error==0){
 			 		deferred.resolve({result:true , detail:results});
 			 	}else{
-			  		deferred.resolve({result:false});
+			  		deferred.resolve({result:false , detail:results});
 			 	}
 			}, function(err) {
 			  deferred.resolve({result:false});
@@ -71,7 +71,7 @@ angular.module('userService', ['azure-mobile-service.module']).factory('User' , 
 			 	if(results.error==0){
 			 		deferred.resolve({result:true , detail:results});
 			 	}else{
-			  		deferred.resolve({result:false});
+			  		deferred.resolve({result:false , detail:results});
 			 	}
 			}, function(err) {
 			  console.log(err);
