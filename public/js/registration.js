@@ -6,16 +6,52 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
 
     $scope.registerStudent = function(){
     	var data ={
-
+         username : $("#sname").val(),
+         password : $("#spass").val(),
+         gender : $("#sdropdownGender").data("kendoDropDownList").value(),
+         level : $("#sdropdownLevel").data("kendoDropDownList").value(),
+         school : $("#sschool").val(),
+         worst : $("#sdropdownWorst").data("kendoDropDownList").value(),
+         best : $("#sdropdownBest").data("kendoDropDownList").value(),
+         beTutor : $("#stutor").is(":checked"),
+         contactable : $("#scontact").is(":checked"),
+         groupTuition : $("#sgroup").is(":checked"),
+         email : $("#semail").val(),
+         subjects : $scope.subjects,
+         userType : 1
     	};
-      console.log($scope.subjects);
-    	//User.registerStudent(data);
+
+      for(var i in data.subjects){
+        delete data.subjects[i]['$$hashKey'];
+        delete data.subjects[i]['index'];
+      }
+
+      console.log(data);
+    	User.registerStudent(data).then(function(results){
+          console.log(results);
+        }); 
     }
     $scope.registerTutor = function(){
     	var data ={
-
+         username : $("#tname").val(),
+         password : $("#tpass").val(),
+         gender : $("#tdropdownGender").data("kendoDropDownList").value(),
+         qualification :  $("#tdropdownHighest").data("kendoDropDownList").value(),
+         exp : $("#texp").val(),
+         area : $("#tdropdownArea").data("kendoDropDownList").value(),
+         favourite1 : $("#tdropdownFavourite1").data("kendoDropDownList").value(),
+         favourite2 : $("#tdropdownFavourite2").data("kendoDropDownList").value(),
+         fee : $("#tfee").val(),
+         address : $("#taddress").val(),
+         job : $("#tjob").val(),
+         about : $("#tabout").val(),
+         userType : 2
     	};
-    	User.registerTutor(data); 	
+
+      console.log(data);
+    	User.registerTutor(data).then(function(results){
+          console.log(results);
+        });	
     }
 
     $scope.addSubject = function(){
@@ -111,8 +147,8 @@ angular.module('tchme').controller('registerController', function($scope, Data, 
 
         Category.getAllSubCategory().then(function(results){
           
-          $("#tdropdownFavourite1").data("kendoDropDownList").dataSource.data($scope.subCategory);
-          $("#tdropdownFavourite2").data("kendoDropDownList").dataSource.data($scope.subCategory);
+          $("#tdropdownFavourite1").data("kendoDropDownList").dataSource.data(results.detail.detail);
+          $("#tdropdownFavourite2").data("kendoDropDownList").dataSource.data(results.detail.detail);
         });
         
     }

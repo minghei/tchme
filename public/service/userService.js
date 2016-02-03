@@ -32,11 +32,9 @@ angular.module('userService', ['azure-mobile-service.module']).factory('User' , 
 	
 	factory.registerStudent = function(data){
 		var deferred = $q.defer(); 
-		Azureservice.invokeApi("registerstudent", {
+		Azureservice.invokeApi("register", {
 		    body: {
-		    	data :{
-			        data : data
-			    }
+		    	data : data
 		    },
 		    headers : {
 		             'Content-Type' : 'application/json'
@@ -59,7 +57,7 @@ angular.module('userService', ['azure-mobile-service.module']).factory('User' , 
 
 	factory.registerTutor = function(data){
 		var deferred = $q.defer(); 
-		Azureservice.invokeApi("registertutor", {
+		Azureservice.invokeApi("register", {
 		    body: {
 		    	data : data
 		    },
@@ -69,12 +67,14 @@ angular.module('userService', ['azure-mobile-service.module']).factory('User' , 
 		    method: "post"
 		}).then(
 			function (results){
+				console.log(results);
 			 	if(results.error==0){
 			 		deferred.resolve({result:true , detail:results});
 			 	}else{
 			  		deferred.resolve({result:false});
 			 	}
 			}, function(err) {
+			  console.log(err);
 			  deferred.resolve({result:false});
 			}
 		);
